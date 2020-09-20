@@ -1,0 +1,13 @@
+[user]
+	name = AJ
+	email = akarsh.1995.02@gmail.com
+[core]
+	autocrlf = input
+	excludesfile = /Users/akarshjain/.gitignore
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = ""
