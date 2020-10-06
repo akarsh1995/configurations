@@ -3,7 +3,7 @@
 # Path to your oh-my-zsh installation.
 fpath+=~/.zfunc
 
-ZSH_THEME="agnoster"
+ZSH_THEME="jonathan"
 
 COMPLETION_WAITING_DOTS="true"
 
@@ -16,12 +16,10 @@ plugins=(
     brew
     extract
     python
-    zsh-syntax-highlighting
-    zsh-autosuggestions
     ng
+    poetry
     docker
     docker-compose
-    poetry
 )
 
 source $ZSH/oh-my-zsh.sh

@@ -6,8 +6,6 @@
 
 (setq projectile-project-search-path "~/Programming/Python/Projects/")
 
-(setq org-directory "~/org/")
-
 (setq display-line-numbers-type t)
 
 (setq doom-font (font-spec :family "Fira Code" :size 15))
@@ -69,7 +67,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files (quote ("~/agendas/organized-me.org"))))
+ '(org-agenda-files (quote ("~/cloud_drives/mega/Agendas"))))
 
 
 ;; Line numbers hybrid

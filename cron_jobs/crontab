@@ -1,0 +1,3 @@
+# at 12:00 every wednesday and saturday.
+0 12 * * 3,6 /Users/akarshjain/configurations/cron_jobs/crontab/cleanup.sh >> /Users/akarshjain/.cron.log 2>&1
+0 12 * * 3,6 /usr/local/bin/brew cleanup >> /Users/akarshjain/.cron.log 2>&1

@@ -1,7 +1,4 @@
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-brew install python@3.6\
-    python@3.7\
+brew install python@3.7\
     tmux\
     rclone\
     poetry\
@@ -14,14 +11,43 @@ brew install python@3.6\
     node\
     htop\
     vim\
-    opencv@4
+    nnn\
+    zsh-completions\
+    zsh-autosuggestions\
+    zsh-syntax-highlighting\
+    bandwhich\
+    # disk space view in commandline
+    diskonaut\
+    tree\
+    cmake\
+    pre-commit\
+    # gnu tools as the bsd are outdated
+    coreutils\
+    # download manager for multithreaded download.
+    axel\
+    # shell syntax checker
+    shellcheck\
+    # torrent downloader
+    rtorrent\
+    # cat alternative to prettify the text in console
+    bat
 
 brew cask install alacritty\
     zoomus\
-    discord
+    discord\
+    appcleaner\
+    tiles\
+    microsoft-teams\
+    telegram\
+    onyx\
+    # for keyboard keys remapping
+    karabiner-elements\
+    firefox
 
 # emacs installation:
 brew tap d12frosted/emacs-plus
 brew install emacs-plus
 ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app
 
+# required in zsh completions
+chmod go-w '/usr/local/share'
