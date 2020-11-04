@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# best way to remove a brew package
+brew tap beeftornado/rmtree
+
 brew install\
     tmux\
     rclone\

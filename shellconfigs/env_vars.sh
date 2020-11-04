@@ -14,7 +14,7 @@ export TERM="xterm-256color"
 # Python binaries
 export PATH="$PATH:$HOME/.poetry/bin"
 export COMPOSE_HTTP_TIMEOUT=200
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=$(/usr/libexec/java_home)
 export LANG=en_US.UTF-8
 
 
