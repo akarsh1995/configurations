@@ -4,9 +4,9 @@
 brew tap beeftornado/rmtree
 
 brew install\
+    python@3.7\
     tmux\
     rclone\
-    poetry\
     wget\
     ripgrep\
     dust\
