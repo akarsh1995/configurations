@@ -31,6 +31,10 @@ brew install\
     emacs\
     vim
 
+# poetry causes issues installing via brew package manager
+# using pip to install
+/usr/local/opt/python@3.7/bin/python3.7 -m pip install poetry
+
 brew cask install\
     alacritty\
     zoomus\
