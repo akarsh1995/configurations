@@ -1,12 +1,10 @@
-#!/usr/bin/env python3.8
+#!/usr/bin/env python3
 
 # first and foremost install brew
 
 import os
 from pathlib import Path
 from shutil import copyfile
-
-os.chdir(__file__)
 
 HOME = Path().home()
 CONFIG = HOME.joinpath('.config')
@@ -100,7 +98,9 @@ def main():
 
     mac_settings()
 
+    cloud_setup()
+
     font_setup()
 
 if __name__ == '__main__':
-    font_setup()
+    main()
