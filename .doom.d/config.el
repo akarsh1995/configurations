@@ -8,7 +8,7 @@
 
 (setq display-line-numbers-type t)
 
-(setq doom-font (font-spec :family "Fira Code" :size 15))
+(setq doom-font (font-spec :family "JetBrains Mono" :size 15))
 
 (require 'evil-multiedit)
 
