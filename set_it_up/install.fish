@@ -32,6 +32,6 @@ if [ $os = Darwin ]
 end
 
 # config files symbolic links
-set DOT_CONFIG_DIR (dirname $PWD/(string replace \./ "" (dirname (status --current-filename ))))/.config
+set DOT_CONFIG_DIR (dirname $SCRIPT_DIR)/.config
 
 ln -s $DOT_CONFIG_DIR $HOME/.config
