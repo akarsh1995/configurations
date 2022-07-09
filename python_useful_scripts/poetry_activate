@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-# target run with the poetry associated python environment
-cd $(dirname -- "$0")
-POETRY_PYTHON_ENV=`exec "$HOME/.poetry/bin/poetry" env list --full-path`
-POETRY_PYTHON_ENV="$POETRY_PYTHON_ENV/bin/python"
-exec "$POETRY_PYTHON_ENV" "$@"

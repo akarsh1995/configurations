@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: torch-conv
-# key: /tconv
-# --
-self.conv${1:1} = torch.nn.Conv2d(in_channels=${2:1}, out_channels=${3:6}, kernel_size=${4:5})

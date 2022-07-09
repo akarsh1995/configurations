@@ -1,0 +1,3 @@
+# at 12:00 every wednesday and saturday.
+0 12 * * 3,6 ${FISH_PATH} ${CLEANUP_SH} >> ${HOME}/.cron.log 2>&1
+0 12 * * 3,6 ${BREW_PATH} cleanup >> ${HOME}/.cron.log 2>&1
