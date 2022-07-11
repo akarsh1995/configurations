@@ -59,6 +59,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
+  {'nickeb96/fish.vim'},
   {'neovim/nvim-lspconfig'},
   {'simrat39/rust-tools.nvim'},
   {"folke/tokyonight.nvim"},
@@ -79,7 +80,7 @@ lvim.plugins = {
 }
 
 -- Hop mappings
-require'hop'.setup()
+require('hop').setup()
 require('rust-tools').setup({})
 
 
@@ -100,6 +101,7 @@ lvim.builtin.which_key.mappings["t"] = {
     w = {"<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics"}
 }
 
+
 lvim.builtin.which_key.mappings["lR"] = {
     name = "+Rust",
     r = {"<cmd>RustRunnables<cr>", "Runnables"},
@@ -115,21 +117,5 @@ lvim.builtin.which_key.mappings["lR"] = {
     g = {"<cmd>RustViewCrateGraph<cr>", "RustViewCrateGraph"}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+vim.api.nvim_set_keymap('', ';', "<cmd>RustHoverActions<cr>", {})
 

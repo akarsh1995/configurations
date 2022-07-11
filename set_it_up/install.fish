@@ -2,30 +2,23 @@
 
 set SCRIPT_DIR $PWD/(string replace \./ "" (dirname (status --current-filename )))
 
-# get info
-
+# gitconfig
 echo "Enter your name: "
 set -x NAME (read)
 
 echo "Enter your email: "
 set -x EMAIL (read)
-
-
-# gitconfig
 set GCFILE $SCRIPT_DIR/dotfiles/.gitconfig
 envsubst '$EMAIL,$NAME' <$GCFILE >~/.gitconfig
 
-# install crontab
-set -x CLEANUP_SH $SCRIPT_DIR/cleanup.sh
-set -x FISH_PATH (which fish)
-set -x BREW_PATH (which brew)
-envsubst '$HOME,$FISH_PATH,$CLEANUP_SH,$BREW_PATH' <$SCRIPT_DIR/crontab | crontab
-
+# brew installs
 source $SCRIPT_DIR/brew_installs.fish
+
+# cron jobs
+source $SCRIPT_DIR/crontab/crontab.fish
 
 # set os var
 set os (uname)
-
 if [ $os = Darwin ]
     defaults write -g InitialKeyRepeat -int 15
     defaults write -g KeyRepeat -int 1
