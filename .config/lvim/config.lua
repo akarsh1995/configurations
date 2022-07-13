@@ -6,6 +6,7 @@ lvim.colorscheme = "tokyonight"
 vim.opt.number = true -- set numbered lines
 vim.opt.relativenumber = true -- set relative numbered lines
 
+vim.opt.timeoutlen = 100
 vim.g.tokyonight_style = "storm" --	The theme comes in three styles, storm, a darker variant night and day.
 vim.g.tokyonight_terminal_colors = true --	Configure the colors used when opening a :terminal in Neovim
 vim.g.tokyonight_italic_comments = true --	Make comments italic
@@ -86,8 +87,6 @@ require('rust-tools').setup({})
 
 vim.api.nvim_set_keymap('', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>", {})
 vim.api.nvim_set_keymap('', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>", {})
-vim.api.nvim_set_keymap('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false, hint_offset = -1 })<cr>", {})
-vim.api.nvim_set_keymap('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false, hint_offset = 1 })<cr>", {})
 
 
 -- Trouble mappings
