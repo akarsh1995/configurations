@@ -61,7 +61,6 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- Additional Plugins
 lvim.plugins = {
   { 'nickeb96/fish.vim' },
-  { 'neovim/nvim-lspconfig' },
   { 'simrat39/rust-tools.nvim' },
   { "folke/tokyonight.nvim" },
   {
