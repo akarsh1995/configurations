@@ -17,7 +17,9 @@ set packages ripgrep \
     axel \
     shellcheck \
     bat \
-    zoxide
+    zoxide \
+    starship \
+    exa
 
 set installed_package_list (brew list --formula)
 
@@ -69,6 +71,5 @@ if [ $os = Darwin ]
   else
     echo all casks are already installed
   end
-
 end
 
