@@ -38,21 +38,21 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-    "bash",
-    "c",
-    "javascript",
-    "json",
-    "lua",
-    "python",
-    "typescript",
-    "tsx",
-    "css",
-    "rust",
-    "java",
-    "yaml"
+  "bash",
+  "c",
+  "javascript",
+  "json",
+  "lua",
+  "python",
+  "typescript",
+  "tsx",
+  "css",
+  "rust",
+  "java",
+  "yaml"
 }
 
-lvim.builtin.treesitter.ignore_install = {"haskell"}
+lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
 -- generic LSP settings
@@ -60,16 +60,16 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
-  {'nickeb96/fish.vim'},
-  {'neovim/nvim-lspconfig'},
-  {'simrat39/rust-tools.nvim'},
-  {"folke/tokyonight.nvim"},
+  { 'nickeb96/fish.vim' },
+  { 'neovim/nvim-lspconfig' },
+  { 'simrat39/rust-tools.nvim' },
+  { "folke/tokyonight.nvim" },
   {
     'phaazon/hop.nvim',
     branch = 'v2', -- optional but strongly recommended
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
-      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
   },
   {
@@ -85,36 +85,39 @@ require('hop').setup()
 require('rust-tools').setup({})
 
 
-vim.api.nvim_set_keymap('', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>", {})
-vim.api.nvim_set_keymap('', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>", {})
+vim.api.nvim_set_keymap('', 'f',
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>"
+  , {})
+vim.api.nvim_set_keymap('', 'F',
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>"
+  , {})
 
 
 -- Trouble mappings
 lvim.builtin.which_key.mappings["t"] = {
-    name = "+Trouble",
-    r = {"<cmd>Trouble lsp_references<cr>", "References"},
-    f = {"<cmd>Trouble lsp_definitions<cr>", "Definitions"},
-    t = {"<cmd>Trouble document_diagnostics<cr>", "Diagnostics"},
-    q = {"<cmd>Trouble quickfix<cr>", "QuickFix"},
-    l = {"<cmd>Trouble loclist<cr>", "LocationList"},
-    w = {"<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics"}
+  name = "+Trouble",
+  r = { "<cmd>Trouble lsp_references<cr>", "References" },
+  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+  t = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
+  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" }
 }
 
 
 lvim.builtin.which_key.mappings["lR"] = {
-    name = "+Rust",
-    r = {"<cmd>RustRunnables<cr>", "Runnables"},
-    i = {"<cmd>RustSetInlayHints<cr>", "RustSetInlayHints"},
-    t = {"<cmd>RustToggleInlayHints<cr>", "RustToggleInlayHints"},
-    e = {"<cmd>RustExpandMacro<cr>", "RustExpandMacro"},
-    o = {"<cmd>RustOpenCargo <cr>", "RustOpenCargo"},
-    p = {"<cmd>RustParentModule<cr>", "RustParentModule"},
-    j = {"<cmd>RustJoinLines<cr>", "RustJoinLines"},
-    h = {"<cmd>RustHoverActions<cr>", "RustHoverActions"},
-    d = {"<cmd>RustMoveItemDown<cr>", "RustMoveItemDown"},
-    u = {"<cmd>RustMoveItemUp<cr>", "RustMoveItemUp"},
-    g = {"<cmd>RustViewCrateGraph<cr>", "RustViewCrateGraph"}
+  name = "+Rust",
+  r = { "<cmd>RustRunnables<cr>", "Runnables" },
+  i = { "<cmd>RustSetInlayHints<cr>", "RustSetInlayHints" },
+  t = { "<cmd>RustToggleInlayHints<cr>", "RustToggleInlayHints" },
+  e = { "<cmd>RustExpandMacro<cr>", "RustExpandMacro" },
+  o = { "<cmd>RustOpenCargo <cr>", "RustOpenCargo" },
+  p = { "<cmd>RustParentModule<cr>", "RustParentModule" },
+  j = { "<cmd>RustJoinLines<cr>", "RustJoinLines" },
+  h = { "<cmd>RustHoverActions<cr>", "RustHoverActions" },
+  d = { "<cmd>RustMoveItemDown<cr>", "RustMoveItemDown" },
+  u = { "<cmd>RustMoveItemUp<cr>", "RustMoveItemUp" },
+  g = { "<cmd>RustViewCrateGraph<cr>", "RustViewCrateGraph" }
 }
 
 vim.api.nvim_set_keymap('', ';', "<cmd>RustHoverActions<cr>", {})
-
