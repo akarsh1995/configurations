@@ -57,8 +57,18 @@ end
 for relative_path in (git ls-files --directory .config);
 	set source_path $PWD/$relative_path
 	set target_path $HOME/$relative_path
+
+  if string match -e "alacritty" $relative_path &>/dev/null
+    if string match -e (string lower $os) $relative_path &>/dev/null
+      set target_path (dirname $target_path)/alacritty.yml
+    else
+      continue
+    end
+  end
+
 	set mkdir_path (dirname $target_path)
 	mkdir -p $mkdir_path
+  echo symlinking $source_path to $target_path
 	ln -s -f $source_path $target_path
 end
 
