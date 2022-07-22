@@ -1,10 +1,16 @@
 if [ $os = Linux ]
-  echo adding linuxbrew to path
-  fish_add_path /home/linuxbrew/.linuxbrew/bin
+  if not test (command -v brew)
+    echo adding linuxbrew to path
+    fish_add_path /home/linuxbrew/.linuxbrew/bin
+  else 
+    echo brew already on path
+  end
 end
 
 # best way to remove a brew package
-brew tap beeftornado/rmtree
+if test (brew tap-info --installed | grep beeftornado\/rmtree | wc -l) -eq 0
+  brew tap beeftornado/rmtree
+end
 
 set packages ripgrep \
     dust \

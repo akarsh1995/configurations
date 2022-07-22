@@ -38,6 +38,7 @@ end
 
 # install fonts
 source $SCRIPT_DIR/install_fonts.fish
+/bin/bash $SCRIPT_DIR/noto_fonts.bash
 
 # brew installs
 source $SCRIPT_DIR/brew_installs.fish
@@ -60,3 +61,7 @@ for relative_path in (git ls-files --directory .config);
 	mkdir -p $mkdir_path
 	ln -s -f $source_path $target_path
 end
+
+# set caps lock to escape and caps lock hold + hjkl to arrow keys
+source $SCRIPT_DIR/caps_lock_mod.fish
+

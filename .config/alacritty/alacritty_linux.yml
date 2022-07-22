@@ -1,0 +1,21 @@
+font:
+  normal:
+    style: "Regular"
+    family: "JetBrainsMono Nerd Font"
+
+  # The bold font face
+  bold:
+    style: "Bold"
+    family: "JetBrainsMono Nerd Font"
+
+  # The italic font face
+  italic:
+    style: "Italic"
+    family: "JetBrainsMono Nerd Font"
+
+  bold_italic:
+    style: "Bold Italic"
+    family: "JetBrainsMono Nerd Font"
+
+  size: 13.0
+

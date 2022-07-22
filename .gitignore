@@ -61,25 +61,3 @@ zsdoc/data
 !/tests/_output/.gitkeep
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,zsh
-
-
-.config/*
-!.config/
-
-
-# refer https://theapache64.github.io/git-do-not-ignore/ to get the do not ignore paths
-.config/lvim/*
-!.config/lvim/
-!.config/lvim/config.lua
-
-# include alacritty
-
-.config/alacritty/*
-!.config/alacritty/
-!.config/alacritty/alacritty.yml
-
-
-# Karabiner Elements
-.config/karabiner/*
-!.config/karabiner/
-!.config/karabiner/karabiner.json
