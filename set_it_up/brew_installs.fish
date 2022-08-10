@@ -12,6 +12,31 @@ if test (brew tap-info --installed | grep beeftornado\/rmtree | wc -l) -eq 0
   brew tap beeftornado/rmtree
 end
 
+
+function install_lunar_vim_if_not_installed
+  if not test -d $HOME/.local/share/lunarvim
+    if not test (command -v nvim)
+      echo "Neovim is not installed kindly install neovim first"
+    else 
+      echo "Lunar vim is not installed"
+      echo "Installing lunar vim"
+      curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh | bash
+    end
+  else
+    echo "Looks like lunar vim is already installed"
+  end
+end
+
+function install_gettext_if_not_installed
+  if not test (command -v envsubst)
+    echo "bin envsubst is not present installing gettext to install envsubst"
+    brew install gettext
+    brew link --force gettext
+  else
+    echo "envsubst bin already exists"
+  end
+end
+
 set packages ripgrep \
     dust \
     neofetch \
@@ -27,8 +52,9 @@ set packages ripgrep \
     zoxide \
     starship \
     exa \
-    gettext \
-    wget
+    wget \
+    fzf \
+    gitui
 
 set installed_package_list (brew list --formula)
 
@@ -47,8 +73,9 @@ else
     echo all formulae are already installed
 end
 
-brew link --force gettext
+install_lunar_vim_if_not_installed
 
+install_gettext_if_not_installed
 
 if [ $os = Darwin ]
   set cask_packages alacritty \
