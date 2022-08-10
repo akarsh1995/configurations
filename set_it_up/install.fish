@@ -38,14 +38,19 @@ end
 
 # install fonts
 source $SCRIPT_DIR/install_fonts.fish
-/bin/bash $SCRIPT_DIR/noto_fonts.bash
+
+if [ $os = Linux ]
+	/bin/bash $SCRIPT_DIR/noto_fonts.bash
+
+	# set caps lock to escape and caps lock hold + hjkl to arrow keys
+	source $SCRIPT_DIR/caps_lock_mod.fish
+end
 
 # brew installs
 source $SCRIPT_DIR/brew_installs.fish
 
 # cron jobs
 source $SCRIPT_DIR/crontab/crontab.fish
-
 
 if [ $os = Darwin ]
     defaults write -g InitialKeyRepeat -int 15
@@ -72,6 +77,4 @@ for relative_path in (git ls-files --directory .config);
 	ln -s -f $source_path $target_path
 end
 
-# set caps lock to escape and caps lock hold + hjkl to arrow keys
-source $SCRIPT_DIR/caps_lock_mod.fish
 

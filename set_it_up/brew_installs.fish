@@ -15,6 +15,7 @@ end
 set packages ripgrep \
     dust \
     neofetch \
+    neovim \
     node \
     htop \
     nnn \
@@ -25,7 +26,9 @@ set packages ripgrep \
     bat \
     zoxide \
     starship \
-    exa
+    exa \
+    gettext \
+    wget
 
 set installed_package_list (brew list --formula)
 
@@ -44,21 +47,18 @@ else
     echo all formulae are already installed
 end
 
+brew link --force gettext
 
 
 if [ $os = Darwin ]
   set cask_packages alacritty \
-        zoomus \
         discord \
         appcleaner \
         tiles \
-        microsoft-teams \
         telegram \
-        onyx \
         karabiner-elements \
         firefox \
         mos \
-        iina \
         eul
 
   set installed_cask_package_list (brew list --casks)
