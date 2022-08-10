@@ -1,3 +1,5 @@
+set -x os (uname)
+
 if [ $os = Linux ]
   if not test (command -v brew)
     echo adding linuxbrew to path
