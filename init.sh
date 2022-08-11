@@ -1,4 +1,4 @@
-#!/bin/env /bin/bash
+#!/usr/bin/env /bin/bash
 
 # install brew
 
@@ -13,6 +13,7 @@ fi
 # install fish shell
 if ! [ -x "$(command -v fish)" ]; then
 	echo 'Error: fish is not installed. Installing fish' >&2
+	brew install fish
 	exit 1
 else
 	echo 'Fish: fish is already installed.' >&2
