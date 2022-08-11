@@ -22,6 +22,7 @@ vim.g.tokyonight_dark_float = true --	Float windows like the lsp diagnostics win
 vim.g.tokyonight_colors = {} --	You can override specific color groups to use other groups or a hex color
 vim.g.tokyonight_day_brightness = 0.3 --	Adjusts the brightness of the colors of the Day style. Number between 0 and 1, from dull to vibrant colors
 vim.g.tokyonight_lualine_bold = false --	When true, section headers in the lualine theme will be bold
+vim.g.tokyonight_style = "night"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -49,7 +50,8 @@ lvim.builtin.treesitter.ensure_installed = {
   "css",
   "rust",
   "java",
-  "yaml"
+  "yaml",
+  "c_sharp"
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -63,6 +65,7 @@ lvim.plugins = {
   { 'nickeb96/fish.vim' },
   { 'simrat39/rust-tools.nvim' },
   { "folke/tokyonight.nvim" },
+  { 'mfussenegger/nvim-treehopper' },
   {
     'phaazon/hop.nvim',
     branch = 'v2', -- optional but strongly recommended
@@ -82,6 +85,20 @@ lvim.plugins = {
 -- Hop mappings
 require('hop').setup()
 require('rust-tools').setup({})
+require('tsht')
+
+
+require 'nvim-treesitter.configs'.setup {
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = '<CR>',
+      scope_incremental = '<CR>',
+      node_incremental = '<TAB>',
+      node_decremental = '<S-TAB>',
+    },
+  },
+}
 
 
 vim.api.nvim_set_keymap('', 'f',
@@ -90,6 +107,9 @@ vim.api.nvim_set_keymap('', 'f',
 vim.api.nvim_set_keymap('', 'F',
   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>"
   , {})
+
+
+vim.api.nvim_set_keymap('', 's', "<cmd>lua require('tsht').nodes()<cr>", {})
 
 
 -- Trouble mappings
