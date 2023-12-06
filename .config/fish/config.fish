@@ -5,3 +5,4 @@ set -x config_dir $HOME/.config
 # config files shortcuts
 alias fish_conf "$EDITOR $config_dir/fish/config.fish"
 alias alacritty_conf "$EDITOR $config_dir/alacritty/alacritty.yml"
+alias http xh
