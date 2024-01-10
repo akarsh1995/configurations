@@ -23,10 +23,10 @@ alias i "CONF_LOG_ALL_DB_QUERY=false NODE_ENV=local npm run test:integration -- 
 alias e "CONF_LOG_ALL_DB_QUERY=false NODE_ENV=local npm run test:e2e -- --watch"
 
 # all individual services 
-alias ed "asd && docker compose -f $AYR_DIR/integration/docker-compose.e2e.yml down"
 alias asu "ed && docker compose -f $AYR_DIR/docker-compose.infra.yml up -d --build && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml up -d --build && docker compose -f $AYR_DIR/projects/arjun/docker-compose.yml up -d --build"
-
 alias asd "docker compose -f $AYR_DIR/projects/arjun/docker-compose.yml down && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml down && docker compose -f $AYR_DIR/docker-compose.infra.yml down"
+
+alias ed "asd && docker compose -f $AYR_DIR/integration/docker-compose.e2e.yml down"
 alias eu "asd && docker compose -f $AYR_DIR/integration/docker-compose.e2e.yml up -d --build"
 
 # fzf bindings
