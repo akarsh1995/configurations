@@ -17,15 +17,15 @@ set -Ux AYR_DIR "/Users/akarshjain/Programming/ayr"
 alias u "npm run test:unit -- --watch --changedSince main"
 
 # integration tests
-alias i "CONF_LOG_ALL_DB_QUERY=false NODE_ENV=local npm run test:integration -- --watch"
+alias i "CONF_LOG_ALL_DB_QUERY=false NODE_ENV=local npm run test:integration -- --watch --changedSince main"
 
 # e2e tests
-alias e "CONF_LOG_ALL_DB_QUERY=false NODE_ENV=local npm run test:e2e -- --watch"
+alias e "CONF_LOG_ALL_DB_QUERY=false NODE_ENV=local npm run test:e2e -- --watch --changedSince main"
 
 # all individual services 
 
-alias ed "docker compose -f $AYR_DIR/integration/docker-compose.yml down"
-alias asd "docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml down && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml down && docker compose -f $AYR_DIR/docker-compose.infra.yml down"
+alias ed "docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full down --remove-orphans"
+alias asd "docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml down --remove-orphans && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml down --remove-orphans && docker compose -f $AYR_DIR/docker-compose.infra.yml down --remove-orphans"
 
 alias asu "ed && asd && docker compose -f $AYR_DIR/docker-compose.infra.yml up -d --build && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml up -d --build && docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml up -d --build"
 alias eu "ed && asd && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full up -d --build"
