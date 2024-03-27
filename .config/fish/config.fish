@@ -14,7 +14,8 @@ set -Ux AYR_DIR "/Users/akarshjain/Programming/ayr"
 
 
 # unit tests
-alias u "npm run test:unit -- --watch --changedSince main"
+alias u "npm run test:unit -- --watch"
+alias um "npm run test:unit -- --watch --changedSince main"
 
 # integration tests
 alias i "CONF_LOG_ALL_DB_QUERY=false NODE_ENV=local npm run test:integration -- --watch --changedSince main"
