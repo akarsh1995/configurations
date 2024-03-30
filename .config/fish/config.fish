@@ -19,6 +19,7 @@ alias um "npm run test:unit -- --watch --changedSince main"
 
 # integration tests
 alias i "CONF_LOG_ALL_DB_QUERY=false NODE_ENV=local npm run test:integration -- --watch --changedSince main"
+alias igp "npm run test:integration:local && git push"
 
 # e2e tests
 alias e "CONF_LOG_ALL_DB_QUERY=false NODE_ENV=local npm run test:e2e -- --watch --changedSince main"
