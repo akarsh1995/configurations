@@ -8,9 +8,9 @@ alias alacritty_conf "$EDITOR $config_dir/alacritty/alacritty.yml"
 alias http xh
 
 # 
-set -Ux CONF_LOG_ALL_DB_QUERY false 
-set -Ux NODE_ENV local 
-set -Ux AYR_DIR "/Users/akarshjain/Programming/ayr"
+set -Ux CONF_LOG_ALL_DB_QUERY false
+set -Ux NODE_ENV local
+set -Ux AYR_DIR /Users/akarshjain/Programming/ayr
 
 
 # unit tests
@@ -19,10 +19,11 @@ alias um "npm run test:unit -- --watch --changedSince main"
 
 # integration tests
 alias i "CONF_LOG_ALL_DB_QUERY=false NODE_ENV=local npm run test:integration -- --watch --changedSince main"
-alias igp "npm run test:integration:local && git push"
+alias ii "npm run test:integration:local"
 
 # e2e tests
-alias e "CONF_LOG_ALL_DB_QUERY=false NODE_ENV=local npm run test:e2e -- --watch --changedSince main"
+alias e "NODE_ENV=local npm run test:e2e -- --watch --changedSince main"
+alias ee "npm run test:e2e:local"
 
 # all individual services 
 
@@ -43,3 +44,27 @@ alias ayr "zellij --layout ayr"
 
 
 fish_add_path $HOME/.local/share/nvm/v20.5.1/bin
+
+
+function center_string
+    set -l str $argv[1] # Get the input string
+    set -l totalLength (math "$argv[2]") # Get the total length
+
+    # Get the length of the input string
+    set -l strLength (string length -r $str)
+
+    # Calculate the number of spaces needed on each side
+    set -l spacesNeeded (math "($totalLength - $strLength) / 2")
+
+    # Create the left padding
+    set -l leftPadding (string repeat " " -n $spacesNeeded)
+
+    # Create the right padding
+    set -l rightPadding (string repeat " " -n (math "$totalLength - $strLength - $spacesNeeded"))
+
+    # Concatenate the padded string
+    set centeredString $leftPadding$str$rightPadding
+
+    # Return the centered string
+    echo $centeredString
+end
