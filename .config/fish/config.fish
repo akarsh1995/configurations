@@ -33,6 +33,8 @@ alias asd "docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml d
 alias asu "ed && asd && docker compose -f $AYR_DIR/docker-compose.infra.yml up -d --build && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml up -d --build && docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml up -d --build"
 alias eu "ed && asd && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full up -d --build"
 
+alias demo "sed -i '' -E 's/CONF_NUM_SEED_USDC_WALLET_BALANCE=[[:digit:]]+/CONF_NUM_SEED_USDC_WALLET_BALANCE=1000000/' $AYR_DIR/projects/bhishma/conf/test.conf && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full down -v --remove-orphans && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full up --build -d"
+
 # fzf bindings
 fzf_configure_bindings --directory=\cf
 
