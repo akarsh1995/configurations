@@ -70,3 +70,8 @@ function center_string
     # Return the centered string
     echo $centeredString
 end
+
+
+function snake_to_camel
+    sed -E 's/_(.)/\U\1/g'
+end
