@@ -12,6 +12,9 @@ set -Ux CONF_LOG_ALL_DB_QUERY false
 set -Ux NODE_ENV local
 set -Ux AYR_DIR /Users/akarshjain/Programming/ayr
 
+alias set_seed_balance_million "sed -i '' -E 's/CONF_NUM_SEED_USDC_WALLET_BALANCE=[[:digit:]]+/CONF_NUM_SEED_USDC_WALLET_BALANCE=1000000/' $AYR_DIR/projects/bhishma/conf/test.conf"
+alias set_seed_balance_zero "sed -i '' -E 's/CONF_NUM_SEED_USDC_WALLET_BALANCE=[[:digit:]]+/CONF_NUM_SEED_USDC_WALLET_BALANCE=0/' $AYR_DIR/projects/bhishma/conf/test.conf"
+
 
 # unit tests
 alias u "npm run test:unit -- --watch"
@@ -27,13 +30,16 @@ alias ee "npm run test:e2e:local"
 
 # all individual services 
 
-alias ed "docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full down --remove-orphans"
-alias asd "docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml down --remove-orphans && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml down --remove-orphans && docker compose -f $AYR_DIR/docker-compose.infra.yml down --remove-orphans"
+alias ed "set_seed_balance_zero && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full down --remove-orphans"
+alias asd "set_seed_balance_zero && docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml down --remove-orphans && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml down --remove-orphans && docker compose -f $AYR_DIR/docker-compose.infra.yml down --remove-orphans"
+alias teld "docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml down -v"
 
 alias asu "ed && asd && docker compose -f $AYR_DIR/docker-compose.infra.yml up -d --build && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml up -d --build && docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml up -d --build"
 alias eu "ed && asd && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full up -d --build"
+alias telu "teld && docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml up -d --build"
 
-alias demo "ed && asd && sed -i '' -E 's/CONF_NUM_SEED_USDC_WALLET_BALANCE=[[:digit:]]+/CONF_NUM_SEED_USDC_WALLET_BALANCE=1000000/' $AYR_DIR/projects/bhishma/conf/test.conf && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full down -v --remove-orphans && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full up --build -d"
+alias demo "ed && asd && set_seed_balance_million && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full down -v --remove-orphans && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full up --build -d"
+
 
 # fzf bindings
 fzf_configure_bindings --directory=\cf
