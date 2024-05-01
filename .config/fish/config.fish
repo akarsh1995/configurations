@@ -8,11 +8,12 @@ alias alacritty_conf "$EDITOR $config_dir/alacritty/alacritty.yml"
 alias http xh
 
 # 
+set -Ux CONF_LOG_ALL_DB_QUERY false
 set -Ux NODE_ENV local
 set -Ux AYR_DIR /Users/akarshjain/Programming/ayr
 
-alias set_seed_balance_million "sed -i '' -E 's/CONF_NUM_SEED_USDC_WALLET_BALANCE=[[:digit:]]+/CONF_NUM_SEED_USDC_WALLET_BALANCE=1000000/' $AYR_DIR/projects/bhishma/conf/test.conf"
-alias set_seed_balance_zero "sed -i '' -E 's/CONF_NUM_SEED_USDC_WALLET_BALANCE=[[:digit:]]+/CONF_NUM_SEED_USDC_WALLET_BALANCE=0/' $AYR_DIR/projects/bhishma/conf/test.conf"
+alias set_seed_balance_million "sed -i '' -E 's/CONF_NUM_SEED_USDT_WALLET_BALANCE=[[:digit:]]+/CONF_NUM_SEED_USDT_WALLET_BALANCE=1000000/' $AYR_DIR/projects/bhishma/conf/test.conf"
+alias set_seed_balance_zero "sed -i '' -E 's/CONF_NUM_SEED_USDT_WALLET_BALANCE=[[:digit:]]+/CONF_NUM_SEED_USDT_WALLET_BALANCE=0/' $AYR_DIR/projects/bhishma/conf/test.conf"
 
 
 # unit tests
