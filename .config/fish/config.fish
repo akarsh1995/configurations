@@ -30,12 +30,12 @@ alias ee "npm run test:e2e:local"
 
 # all individual services 
 
-alias ed "set_seed_balance_zero && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full down --remove-orphans"
+alias ed "set_seed_balance_zero && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be down --remove-orphans"
 alias asd "set_seed_balance_zero && docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml down --remove-orphans && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml down --remove-orphans && docker compose -f $AYR_DIR/docker-compose.infra.yml down --remove-orphans"
 alias teld "docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml down -v"
 
 alias asu "ed && asd && docker compose -f $AYR_DIR/docker-compose.infra.yml up -d --build && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml up -d --build && docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml up -d --build"
-alias eu "ed && asd && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full up -d --build"
+alias eu "ed && asd && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be up -d --build"
 alias telu "teld && docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml up -d --build"
 
 alias demo "ed && asd && set_seed_balance_million && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full down -v --remove-orphans && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full up --build -d"
