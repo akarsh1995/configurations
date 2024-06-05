@@ -8,7 +8,7 @@ alias alacritty_conf "$EDITOR $config_dir/alacritty/alacritty.yml"
 alias http xh
 
 # 
-set -Ux CONF_LOG_ALL_DB_QUERY false
+set -Ux CONF_LOG_ALL_DB_QUERY true
 set -Ux NODE_ENV local
 set -Ux AYR_DIR /Users/akarshjain/Programming/ayr
 
