@@ -16,6 +16,25 @@ alias set_seed_balance_million "sed -i '' -E 's/CONF_NUM_SEED_USDT_WALLET_BALANC
 alias set_seed_balance_zero "sed -i '' -E 's/CONF_NUM_SEED_USDT_WALLET_BALANCE=[[:digit:]]+/CONF_NUM_SEED_USDT_WALLET_BALANCE=0/' $AYR_DIR/projects/bhishma/conf/test.conf"
 
 
+
+
+alias docker-defx-infra-test-postgres-db "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-infra-test-postgres-db -d --build"
+alias docker-defx-infra-test-redis-c2 "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-infra-test-redis-c2 -d --build"
+alias docker-defx-arjun-me-test "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-arjun-me-test -d --build"
+alias docker-defx-arjun-se-test "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-arjun-se-test -d --build"
+alias docker-defx-arjun-le-test "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-arjun-le-test -d --build"
+alias docker-defx-arjun-test-runner "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-arjun-test-runner -d --build"
+alias docker-defx-bhishma-test-api-server "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-bhishma-test-api-server -d --build"
+alias docker-defx-bhishma-test-worker "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-bhishma-test-worker -d --build"
+alias docker-defx-bhishma-test-worker-opms "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-bhishma-test-worker-opms -d --build"
+alias docker-defx-bhishma-test-migration "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-bhishma-test-migration -d --build"
+alias docker-defx-test-fe "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-test-fe -d --build"
+alias docker-defx-wc-test-postgres "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-postgres -d --build"
+alias docker-defx-wc-test-faktory "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-faktory -d --build"
+alias docker-defx-wc-test-api "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-api -d --build"
+alias docker-defx-wc-test-worker-all "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-worker-all -d --build"
+
+
 # unit tests
 alias u "npm run test:unit -- --watch"
 alias um "npm run test:unit -- --watch --changedSince main"
