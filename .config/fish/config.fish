@@ -8,7 +8,7 @@ alias alacritty_conf "$EDITOR $config_dir/alacritty/alacritty.yml"
 alias http xh
 
 # 
-set -Ux CONF_LOG_ALL_DB_QUERY false
+# set -Ux CONF_LOG_ALL_DB_QUERY false
 set -Ux NODE_ENV local
 set -Ux AYR_DIR /Users/akarshjain/Programming/ayr
 
@@ -18,21 +18,42 @@ alias set_seed_balance_zero "sed -i '' -E 's/CONF_NUM_SEED_USDT_WALLET_BALANCE=[
 
 
 
-alias docker-defx-infra-test-postgres-db "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-infra-test-postgres-db -d --build"
-alias docker-defx-infra-test-redis-c2 "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-infra-test-redis-c2 -d --build"
-alias docker-defx-arjun-me-test "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-arjun-me-test -d --build"
-alias docker-defx-arjun-se-test "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-arjun-se-test -d --build"
-alias docker-defx-arjun-le-test "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-arjun-le-test -d --build"
-alias docker-defx-arjun-test-runner "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-arjun-test-runner -d --build"
-alias docker-defx-bhishma-test-api-server "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-bhishma-test-api-server -d --build"
-alias docker-defx-bhishma-test-worker "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-bhishma-test-worker -d --build"
-alias docker-defx-bhishma-test-worker-opms "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-bhishma-test-worker-opms -d --build"
-alias docker-defx-bhishma-test-migration "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-bhishma-test-migration -d --build"
-alias docker-defx-test-fe "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-test-fe -d --build"
-alias docker-defx-wc-test-postgres "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-postgres -d --build"
-alias docker-defx-wc-test-faktory "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-faktory -d --build"
-alias docker-defx-wc-test-api "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-api -d --build"
-alias docker-defx-wc-test-worker-all "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-worker-all -d --build"
+alias docker-up-infra-test-postgres-db "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-infra-test-postgres-db -d --build"
+alias docker-up-infra-test-redis-c2 "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-infra-test-redis-c2 -d --build"
+alias docker-up-arjun-me-test "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-arjun-me-test -d --build"
+alias docker-up-arjun-se-test "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-arjun-se-test -d --build"
+alias docker-up-arjun-le-test "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-arjun-le-test -d --build"
+alias docker-up-arjun-test-runner "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-arjun-test-runner -d --build"
+alias docker-up-bhishma-test-api-server "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-bhishma-test-api-server -d --build"
+alias docker-up-bhishma-test-worker "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-bhishma-test-worker -d --build"
+alias docker-up-bhishma-test-worker-opms "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-bhishma-test-worker-opms -d --build"
+alias docker-up-bhishma-test-migration "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-bhishma-test-migration -d --build"
+alias docker-up-test-fe "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-test-fe -d --build"
+alias docker-up-wc-test-postgres "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-postgres -d --build"
+alias docker-up-wc-test-faktory "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-faktory -d --build"
+alias docker-up-wc-test-api "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-api -d --build"
+alias docker-up-wc-test-worker-all "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-worker-all -d --build"
+
+alias docker-down-infra-test-postgres-db "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-infra-test-postgres-db"
+alias docker-down-infra-test-redis-c2 "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-infra-test-redis-c2"
+alias docker-down-arjun-me-test "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-arjun-me-test"
+alias docker-down-arjun-se-test "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-arjun-se-test"
+alias docker-down-arjun-le-test "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-arjun-le-test"
+alias docker-down-arjun-test-runner "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-arjun-test-runner"
+alias docker-down-bhishma-test-api-server "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-bhishma-test-api-server"
+alias docker-down-bhishma-test-worker "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-bhishma-test-worker"
+alias docker-down-bhishma-test-worker-opms "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-bhishma-test-worker-opms"
+alias docker-down-bhishma-test-migration "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-bhishma-test-migration"
+alias docker-down-test-fe "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-test-fe"
+alias docker-down-wc-test-postgres "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-wc-test-postgres"
+alias docker-down-wc-test-faktory "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-wc-test-faktory"
+alias docker-down-wc-test-api "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-wc-test-api"
+alias docker-down-wc-test-worker-all "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-wc-test-worker-all"
+
+
+
+
+
 
 
 # unit tests
@@ -57,6 +78,7 @@ alias teld "docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml do
 alias asu "ed && asd && docker compose -f $AYR_DIR/docker-compose.infra.yml up -d --build && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml up -d --build && docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml up -d --build"
 alias asuv "ed && asdv && docker compose -f $AYR_DIR/docker-compose.infra.yml up -d --build && npm run orm:mg:local && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml up -d --build && docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml up -d --build"
 alias eu "ed && asd && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be up -d --build"
+alias euf "ed && asd && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full up -d --build"
 alias telu "teld && docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml up -d --build"
 
 alias demo "ed && asd && set_seed_balance_million && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full down -v --remove-orphans && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full up --build -d"
