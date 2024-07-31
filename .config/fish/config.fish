@@ -52,10 +52,6 @@ alias docker-down-wc-test-worker-all "docker compose -f $AYR_DIR/integration/doc
 
 
 
-
-
-
-
 # unit tests
 alias u "npm run test:unit -- --watch"
 alias um "npm run test:unit -- --watch --changedSince main"
@@ -95,6 +91,8 @@ alias ayr "zellij --layout ayr"
 
 
 fish_add_path $HOME/.local/share/nvm/v20.5.1/bin
+
+fish_add_path $HOME/temp/fish-lsp/bin
 
 
 function center_string
