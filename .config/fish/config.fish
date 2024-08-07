@@ -16,8 +16,6 @@ alias set_seed_balance_million "sed -i '' -E 's/CONF_NUM_SEED_USDT_WALLET_BALANC
 alias set_seed_balance_zero "sed -i '' -E 's/CONF_NUM_SEED_USDT_WALLET_BALANCE=[[:digit:]]+/CONF_NUM_SEED_USDT_WALLET_BALANCE=0/' $AYR_DIR/projects/bhishma/conf/test.conf"
 
 
-
-
 alias docker-up-infra-test-postgres-db "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-infra-test-postgres-db -d --build"
 alias docker-up-infra-test-redis-c2 "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-infra-test-redis-c2 -d --build"
 alias docker-up-arjun-me-test "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-arjun-me-test -d --build"
@@ -94,6 +92,7 @@ fish_add_path $HOME/.local/share/nvm/v20.5.1/bin
 
 fish_add_path $HOME/temp/fish-lsp/bin
 
+fish_add_path /opt/homebrew/opt/llvm/bin
 
 function center_string
     set -l str $argv[1] # Get the input string
@@ -122,3 +121,17 @@ end
 function snake_to_camel
     sed -E 's/_(.)/\U\1/g'
 end
+
+# To use the bundled libc++ please add the following LDFLAGS:
+#   LDFLAGS="-L/opt/homebrew/opt/llvm/lib/c++ -L/opt/homebrew/opt/llvm/lib -lunwind"
+
+# llvm is keg-only, which means it was not symlinked into /opt/homebrew,
+# because macOS already provides this software and installing another version in
+# parallel can cause all kinds of trouble.
+
+# If you need to have llvm first in your PATH, run:
+#   fish_add_path /opt/homebrew/opt/llvm/bin
+
+# For compilers to find llvm you may need to set:
+#   set -gx LDFLAGS "-L/opt/homebrew/opt/llvm/lib"
+#   set -gx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
