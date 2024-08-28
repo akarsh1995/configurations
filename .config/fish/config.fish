@@ -55,7 +55,7 @@ alias u "npm run test:unit -- --watch"
 alias um "npm run test:unit -- --watch --changedSince main"
 
 # integration tests
-alias i "CONF_LOG_ALL_DB_QUERY=false NODE_ENV=local npm run test:integration -- --watch --changedSince main"
+alias i "CONF_LOG_ALL_DB_QUERY=false NODE_ENV=local npm run test:integration:local -- --watch --changedSince main"
 alias ii "npm run test:integration:local"
 
 # e2e tests
@@ -71,7 +71,7 @@ alias teld "docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml do
 
 alias asu "ed && asd && docker compose -f $AYR_DIR/docker-compose.infra.yml up -d --build && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml up -d --build && docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml up -d --build"
 alias asuv "ed && asdv && docker compose -f $AYR_DIR/docker-compose.infra.yml up -d --build && npm run orm:mg:local && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml up -d --build && docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml up -d --build"
-alias eu "ed && asd && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be up -d --build"
+alias eu "docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be up -d --build"
 alias euf "ed && asd && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full up -d --build"
 alias telu "teld && docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml up -d --build"
 
@@ -135,3 +135,6 @@ end
 # For compilers to find llvm you may need to set:
 #   set -gx LDFLAGS "-L/opt/homebrew/opt/llvm/lib"
 #   set -gx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
+
+export PATH="$HOME/.fuelup/bin:$PATH"
+fuelup completions --shell=fish | source
