@@ -139,3 +139,20 @@ end
 
 export PATH="$HOME/.fuelup/bin:$PATH"
 fuelup completions --shell=fish | source
+
+
+export ZMK_APP_DIR="/Users/akarshjain/temp/zmk/app"
+
+export BUILD_DIR="$ZMK_APP_DIR/build"
+export BUILD_DIR_CORNE_LEFT="$BUILD_DIR/corne-left"
+export BUILD_DIR_CORNE_RIGHT="$BUILD_DIR/corne-right"
+
+alias build_corne_left "west build -d $BUILD_DIR_CORNE_LEFT -b seeeduino_xiao_ble -- -DSHIELD=corny_left -DZMK_CONFIG=/Users/akarshjain/temp/zmk-config-corne/config -DZMK_EXTRA_MODULES=/Users/akarshjain/temp/zmk-config-corne/"
+alias build_corne_right "west build -d $BUILD_DIR_CORNE_RIGHT -b seeeduino_xiao_ble -- -DSHIELD=corny_right -DZMK_CONFIG=/Users/akarshjain/temp/zmk-config-corne/config -DZMK_EXTRA_MODULES=/Users/akarshjain/temp/zmk-config-corne/"
+alias build_corne 'build_corne_left && build_corne_right'
+alias copy_corne_left "cp $BUILD_DIR_CORNE_LEFT/zephyr/zmk.uf2 /Volumes/XIAO-SENSE/"
+alias copy_corne_right "cp $BUILD_DIR_CORNE_RIGHT/zephyr/zmk.uf2 /Volumes/XIAO-SENSE/"
+
+export BUILD_DIR_DUMBPAD="$BUILD_DIR/dumbpad"
+alias build_dumbpad "west build -d $BUILD_DIR_DUMBPAD -b nice_nano_v2 -- -DSHIELD=dumbpad -DZMK_CONFIG=/Users/akarshjain/temp/zmk-config-dumbpad/config -DZMK_EXTRA_MODULES=/Users/akarshjain/temp/zmk-config-dumbpad/"
+alias copy_dumbpad "cp $BUILD_DIR_DUMBPAD/zephyr/zmk.uf2 /Volumes/XIAO-SENSE/"
