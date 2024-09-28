@@ -31,6 +31,7 @@ alias docker-up-wc-test-postgres "docker compose -f $AYR_DIR/integration/docker-
 alias docker-up-wc-test-faktory "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-faktory -d --build"
 alias docker-up-wc-test-api "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-api -d --build"
 alias docker-up-wc-test-worker-all "docker compose -f $AYR_DIR/integration/docker-compose.yml up defx-wc-test-worker-all -d --build"
+alias docker-up-telemetry "docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml up -d --build"
 
 alias docker-down-infra-test-postgres-db "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-infra-test-postgres-db"
 alias docker-down-infra-test-redis-c2 "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-infra-test-redis-c2"
@@ -47,6 +48,7 @@ alias docker-down-wc-test-postgres "docker compose -f $AYR_DIR/integration/docke
 alias docker-down-wc-test-faktory "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-wc-test-faktory"
 alias docker-down-wc-test-api "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-wc-test-api"
 alias docker-down-wc-test-worker-all "docker compose -f $AYR_DIR/integration/docker-compose.yml down defx-wc-test-worker-all"
+alias docker-down-telemetry "docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml down"
 
 
 
