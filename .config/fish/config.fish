@@ -93,6 +93,8 @@ alias ayr "zellij --layout ayr"
 
 fish_add_path $HOME/.local/share/nvm/v20.5.1/bin
 
+fish_add_path /Users/akarshjain/.local/share/solana/install/active_release/bin
+
 fish_add_path $HOME/temp/fish-lsp/bin
 
 fish_add_path /opt/homebrew/opt/llvm/bin
