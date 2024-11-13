@@ -66,15 +66,15 @@ alias ee "npm run test:e2e:local"
 
 # all individual services 
 
-alias ed "docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be down"
-alias es "docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be stop"
+alias ed "docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be-lite down"
+alias es "docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be-lite stop"
 alias asd "docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml down --remove-orphans && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml down --remove-orphans && docker compose -f $AYR_DIR/docker-compose.infra.yml down --remove-orphans"
 alias asdv "docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml down -v --remove-orphans && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml down -v --remove-orphans && docker compose -f $AYR_DIR/docker-compose.infra.yml down -v --remove-orphans"
-alias teld "docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml down -v"
+alias teld "docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml down"
 
 alias asu "ed && asd && docker compose -f $AYR_DIR/docker-compose.infra.yml up -d --build && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml up -d --build && docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml up -d --build"
 alias asuv "ed && asdv && docker compose -f $AYR_DIR/docker-compose.infra.yml up -d --build && npm run orm:mg:local && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml up -d --build && docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml up -d --build"
-alias eu "docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be up -d --build"
+alias eu "docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be-lite up -d --build"
 alias euf "ed && asd && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full up -d --build"
 alias telu "teld && docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml up -d --build"
 
