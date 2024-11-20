@@ -68,6 +68,10 @@ alias ee "npm run test:e2e:local"
 
 alias ed "docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be-lite down"
 alias es "docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be-lite stop"
+
+alias edf "docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be-lite down"
+alias esf "docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be-lite stop"
+
 alias asd "docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml down --remove-orphans && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml down --remove-orphans && docker compose -f $AYR_DIR/docker-compose.infra.yml down --remove-orphans"
 alias asdv "docker compose -f $AYR_DIR/projects/arjun/docker/docker-compose.yml down -v --remove-orphans && docker compose -f $AYR_DIR/projects/wallet-core/docker-compose.yml down -v --remove-orphans && docker compose -f $AYR_DIR/docker-compose.infra.yml down -v --remove-orphans"
 alias teld "docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml down"
