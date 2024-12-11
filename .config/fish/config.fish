@@ -88,6 +88,11 @@ alias telu "teld && docker compose -f $AYR_DIR/telemetry/docker-compose.telemetr
 alias demo "ed && asd && set_seed_balance_million && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full down -v --remove-orphans && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full up --build -d"
 
 
+# migrations
+alias mggene2e "npm run build && NODE_ENV=test.local npx typeorm-ts-node-esm migration:generate ./src/migrations/bhishma/OrmAutoGenerate -d ./dist/migrations/bhishma/datasource/DbConfig.js"
+alias mge2e "npm run build && NODE_ENV=test.local npm run orm:cli migration:run -- -d ./dist/migrations/bhishma/datasource/DbConfig.js"
+
+
 # fzf bindings
 fzf_configure_bindings --directory=\cf
 
