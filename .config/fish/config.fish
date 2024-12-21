@@ -81,7 +81,7 @@ alias asuv "ed && asdv && docker compose -f $AYR_DIR/docker-compose.infra.yml up
 # alias eu "docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=be-lite up -d --build"
 alias eu "docker-up-arjun-me-test && docker-up-arjun-le-test && docker-up-bhishma-test-migration && docker-up-wc-test-postgres && docker-up-wc-test-faktory && docker-up-wc-test-api && docker-up-wc-test-worker-all"
 alias rest "APP_COMPONENT=REST_SERVER NODE_ENV=test.local npx ts-node src/index.ts"
-alias bg_worker "APP_COMPONENT=BG_WORKER,BG_WORKER_OPMS,BG_WORKER_OPMS_NEW_ORDER_1,BG_WORKER_OPMS_NEW_ORDER_2,BG_WORKER_OPMS_ORDER_EVENT,BG_WORKER_OPMS_TRADE_EVENT NODE_ENV=test.local npx ts-node src/index.ts"
+alias bg_worker "APP_COMPONENT=BG_WORKER,BG_WORKER_OPMS,BG_WORKER_OPMS_NEW_ORDER_1,BG_WORKER_OPMS_NEW_ORDER_2,BG_WORKER_OPMS_NEW_ORDER_3,BG_WORKER_OPMS_ORDER_EVENT,BG_WORKER_OPMS_TRADE_EVENT NODE_ENV=test.local npx ts-node src/index.ts"
 alias euf "ed && asd && docker compose -f $AYR_DIR/integration/docker-compose.yml --profile=full up -d --build"
 alias telu "teld && docker compose -f $AYR_DIR/telemetry/docker-compose.telemetry.yml up -d --build"
 
